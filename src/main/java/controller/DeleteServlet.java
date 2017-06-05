@@ -20,7 +20,7 @@ public class DeleteServlet extends HttpServlet {
         resp.sendRedirect("printall");
     }
 
-    @Override
+   /* @Override
     public void doPost (HttpServletRequest req, HttpServletResponse resp) {
-    }
+    }*/
 }

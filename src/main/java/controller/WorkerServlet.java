@@ -1,3 +1,4 @@
+/*
 package controller;
 
 import model.Worker;
@@ -38,4 +39,4 @@ public class WorkerServlet extends HttpServlet {
                            req.getParameter("lastName")));
         req.getRequestDispatcher("/insert.jsp").forward(req, resp);
     }
-}
+}*/

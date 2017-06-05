@@ -1,20 +1,20 @@
 package model;
 
 public class Worker {
-    private String lastName;
     private String firstName;
+    private String lastName;
     private int age;
     private double salary;
     private long id;
 
     public Worker (){}
 
-    public Worker(String firstName, String lastName) {
+  /*  public Worker(String firstName, String lastName) {
         this.firstName = firstName;
         this.lastName = lastName;
     }
-
-    public Worker(String lastName, String firstName, int age, double salary, long id) {
+*/
+    public Worker(String firstName, String lastName, int age, double salary, long id) {
         this.lastName = lastName;
         this.firstName = firstName;
         this.age = age;
@@ -65,8 +65,8 @@ public class Worker {
     @Override
     public String toString() {
         return "Worker{" +
-                "lastName='" + lastName + '\'' +
-                ", firstName='" + firstName + '\'' +
+                "firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
                 ", id=" + id +
                 '}';
     }

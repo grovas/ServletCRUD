@@ -3,6 +3,7 @@ package controller;
 import model.Worker;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -15,8 +16,18 @@ public class WorkersDAO {
         data.add(worker);
     }
 
-    public void updateWorker (int id) {
+    public List<Worker> findById (List<Worker> data, long id) {
+        return data.stream()
+                .filter(work -> work.getId() == id)
+                .collect(Collectors.toList());
+    }
 
+    public void updateWorker (int id, Worker workerNew) {
+        Worker workerOld = data.stream()
+                .filter(work -> work.getId() == id)
+                .findFirst().get();
+        System.out.println("updateWorkerDAO " + workerOld + " " + workerNew);
+        Collections.replaceAll(data, workerOld, workerNew);
     }
 
     public void deleteWorker (long id) {
@@ -24,7 +35,7 @@ public class WorkersDAO {
                 .filter(work -> work.getId() == id)
                 .collect(Collectors.toList());
 
-        System.out.println("Delete " + foundedWorker.toString());
+      //  System.out.println("Delete " + foundedWorker.toString());
         /*System.out.println("Delete worker: " + worker.toString());
         System.out.println("Delete worker id: " + worker.getId());*/
 
@@ -39,9 +50,13 @@ public class WorkersDAO {
         return data;
     }
 
+    public Worker getWorkerById (long id) {
+        return data.stream()
+               .filter(work -> work.getId() == id)
+               .findFirst().get();
+    }
+
     public void removeAll () {
         data = new ArrayList<>();
     }
-
-    public int emptyList() { return 0; }
 }

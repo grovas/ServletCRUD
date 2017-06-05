@@ -9,28 +9,29 @@
     <link rel="stylesheet"
           href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="main.css">
-    <title>Edytuj Pracownika:</title>
+    <title>Edytuj dane pracownika:</title>
 </head>
 <body>
     <div class="container">
         <h1>Tutaj edytujemy pracownika</h1>
     </div>
-    <form class="form-inline" action="insert" method="post">
+    <form class="form-inline" action="update" method="post">
+        <input type="hidden" name="id" value="${worker.id}"/>
         <div class="form-group">
             <label> Imię: </label>
-            <input class="form-control" type="text" name="firstName">
+            <input class="form-control" type="text" value="${worker.firstName}" name="firstName"/>
         </div>
         <div class="form-group">
             <label> Nazwisko: </label>
-            <input class="form-control" type="text" value="dsadasdsad" name="lastName">
+            <input class="form-control" type="text" value="${worker.lastName}" name="lastName"/>
         </div>
         <div class="form-group">
             <label> Wiek: </label>
-            <input class="form-control" type="text" name="age">
+            <input class="form-control" type="text" value="${worker.age}" name="age"/>
         </div>
         <div class="form-group">
-            <label> Płaca: </label>
-            <input class="form-control" type="text" name="salary">
+            <label> Pensja: </label>
+            <input class="form-control" type="text" value="${worker.salary}" name="salary"/>
         </div>
         <button class="btn btn-default" type="submit">
             Zapisz

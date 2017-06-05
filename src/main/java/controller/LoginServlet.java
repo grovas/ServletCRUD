@@ -37,7 +37,7 @@ public class LoginServlet extends HttpServlet {
 
             WorkersDAO workersDAO = new WorkersDAO();
 
-            workersDAO.removeAll();
+            //workersDAO.removeAll();
             workersDAO.insertWorker(
                     new Worker("Jas", "dertop", 12, 3333.3, lastIndex.getAndIncrement()));
             workersDAO.insertWorker(

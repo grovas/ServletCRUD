@@ -43,7 +43,7 @@
             <c:forEach var="i" begin="0" end="${workers.size()-1}" >
                 <tr>
                     <td><c:out value="${workers.get(i).id}"/></td>
-                    <td><a href="update" ${workers.get(i)}><c:out value="${workers.get(i).firstName}"/></a></td>
+                    <td><a href="/update?id=${workers.get(i).id}"><c:out value="${workers.get(i).firstName}"/></a></td>
                     <td><c:out value="${workers.get(i).lastName}"/></td>
                     <td><c:out value="${workers.get(i).age}"/></td>
                     <td><c:out value="${workers.get(i).salary}"/></td>

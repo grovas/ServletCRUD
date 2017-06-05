@@ -7,15 +7,17 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.concurrent.atomic.AtomicLong;
 
 public class InsertServlet extends HttpServlet{
 
-    Worker worker = new Worker();
+    private AtomicLong lastId = new AtomicLong();
+    private Worker worker = new Worker();
 
     @Override
     protected void doGet  (HttpServletRequest req, HttpServletResponse resp)
             throws IOException, ServletException {
-
+    // do poprawy
         resp.setContentType("text/html");
         req.setAttribute("insertWorker", worker);
         req.getRequestDispatcher("/insert.jsp").forward(req, resp);
@@ -31,6 +33,7 @@ public class InsertServlet extends HttpServlet{
                                            req.getParameter("lastName"),
                                            Integer.parseInt(req.getParameter("age")),
                                            Double.parseDouble(req.getParameter("salary")),
+                                           // dodac sprawdzanie kolejnego id dodawanego workera
                                            workersDAO.getSize()));
         resp.sendRedirect("printall");
     }

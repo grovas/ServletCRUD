@@ -13,24 +13,24 @@
 </head>
 <body>
     <div class="container">
-        <h1>Tutaj możesz dodać nowego pracownika</h1>
+        <h1>Tutaj dodajesz nowego pracownika</h1>
     </div>
     <form class="form-inline" action="insert" method="post">
         <div class="form-group">
             <label> Imię: </label>
-            <input class="form-control" type="text" name="firstName">
+            <input class="form-control" type="text" name="firstName"/>
         </div>
         <div class="form-group">
             <label> Nazwisko: </label>
-            <input class="form-control" type="text" name="lastName">
+            <input class="form-control" type="text" name="lastName"/>
         </div>
         <div class="form-group">
             <label> Wiek: </label>
-            <input class="form-control" type="text" name="age">
+            <input class="form-control" type="text" name="age"/>
         </div>
         <div class="form-group">
             <label> Płaca: </label>
-            <input class="form-control" type="text" name="salary">
+            <input class="form-control" type="text" name="salary"/>
         </div>
         <button class="btn btn-default" type="submit">
             Dodaj
