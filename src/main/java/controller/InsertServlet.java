@@ -19,7 +19,7 @@ public class InsertServlet extends HttpServlet{
             throws IOException, ServletException {
     // do poprawy
         resp.setContentType("text/html");
-        req.setAttribute("insertWorker", worker);
+        req.setAttribute("insert", worker);
         req.getRequestDispatcher("/insert.jsp").forward(req, resp);
     }
 
@@ -28,7 +28,6 @@ public class InsertServlet extends HttpServlet{
             throws IOException, ServletException {
 
         WorkersDAO workersDAO = new WorkersDAO();
-
         workersDAO.insertWorker(new Worker(req.getParameter("firstName"),
                                            req.getParameter("lastName"),
                                            Integer.parseInt(req.getParameter("age")),

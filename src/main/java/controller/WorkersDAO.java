@@ -1,5 +1,6 @@
 package controller;
 
+import com.sun.xml.internal.ws.api.pipe.FiberContextSwitchInterceptor;
 import model.Worker;
 
 import java.util.ArrayList;
@@ -16,17 +17,14 @@ public class WorkersDAO {
         data.add(worker);
     }
 
-    public List<Worker> findById (List<Worker> data, long id) {
+    public Worker findById (List<Worker> data, int id) {
         return data.stream()
                 .filter(work -> work.getId() == id)
-                .collect(Collectors.toList());
+                .findFirst().get();
     }
 
     public void updateWorker (int id, Worker workerNew) {
-        Worker workerOld = data.stream()
-                .filter(work -> work.getId() == id)
-                .findFirst().get();
-        System.out.println("updateWorkerDAO " + workerOld + " " + workerNew);
+        Worker workerOld = findById(data, id);
         Collections.replaceAll(data, workerOld, workerNew);
     }
 
@@ -34,10 +32,6 @@ public class WorkersDAO {
         List<Worker> foundedWorker = data.stream()
                 .filter(work -> work.getId() == id)
                 .collect(Collectors.toList());
-
-      //  System.out.println("Delete " + foundedWorker.toString());
-        /*System.out.println("Delete worker: " + worker.toString());
-        System.out.println("Delete worker id: " + worker.getId());*/
 
         data.removeAll(foundedWorker);
     }
@@ -50,13 +44,11 @@ public class WorkersDAO {
         return data;
     }
 
-    public Worker getWorkerById (long id) {
-        return data.stream()
-               .filter(work -> work.getId() == id)
-               .findFirst().get();
+    public Worker getWorkerById (int id) {
+        return findById(data, id);
     }
 
-    public void removeAll () {
+    /*public void removeAll () {
         data = new ArrayList<>();
-    }
+    }*/
 }

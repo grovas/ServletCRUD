@@ -62,6 +62,11 @@ public class Worker {
         id = id;
     }
 
+    public long compareTo(Worker compareWorker) {
+        long compareId = ((Worker) compareWorker).getId();
+        return this.id - compareId;
+    }
+
     @Override
     public String toString() {
         return "Worker{" +

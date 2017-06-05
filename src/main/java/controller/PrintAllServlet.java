@@ -12,7 +12,6 @@ public class PrintAllServlet extends HttpServlet {
     protected void doGet (HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
 
-        //resp.setContentType("text/html");
         WorkersDAO workersDAO = new WorkersDAO();
         if (workersDAO.getSize() > 0) {
             req.setAttribute("workers", workersDAO.getWorkers());

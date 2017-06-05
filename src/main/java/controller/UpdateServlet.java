@@ -17,24 +17,15 @@ public class UpdateServlet extends HttpServlet {
     @Override
     protected void doGet (HttpServletRequest req, HttpServletResponse resp)
             throws IOException, ServletException {
-       // HttpSession session = req.getSession(true);
-        //WorkersDAO workersDAO = new WorkersDAO();
+
         long workerId = Long.parseLong(req.getParameter("id"));
-
-        //resp.setContentType("text/html");
-        req.setAttribute("worker", workersDAO.getWorkerById(workerId));
-        //req.getParameter("lastName");
-        //req.getParameter("age");
-        //req.getParameter("salary");
-
-        //System.out.println("Update " + workersDAO.getWorkerById(workerId));
+        req.setAttribute("worker", workersDAO.getWorkerById((int)workerId));
         req.getRequestDispatcher("/update.jsp").forward(req, resp);
     }
 
     @Override
     protected void doPost (HttpServletRequest req, HttpServletResponse resp)
             throws IOException, ServletException {
-
 
         String firstName = req.getParameter("firstName");
         String lastName = req.getParameter("lastName");
