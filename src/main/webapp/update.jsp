@@ -33,7 +33,8 @@
             <label> Pensja: </label>
             <input class="form-control" type="text" value="${worker.salary}" name="salary"/>
         </div>
-        <button class="btn btn-default" type="submit">
+        <button class="btn btn-default" type="submit"
+                onclick="return confirm('Czy na pewno auktualnić dane pracownika o id ${worker.id}?')">
             Zapisz
         </button>
     </form>

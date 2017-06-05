@@ -45,6 +45,6 @@ public class UpdateServlet extends HttpServlet {
         Worker worker = new Worker(firstName, lastName, age, salary, id);
         System.out.println("Update servlet " + worker);
         workersDAO.updateWorker((int) id, worker);
-        resp.sendRedirect("welcome");
+        resp.sendRedirect("printall");
     }
 }
