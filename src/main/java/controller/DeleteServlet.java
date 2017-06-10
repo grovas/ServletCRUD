@@ -8,19 +8,22 @@ import java.io.IOException;
 
 public class DeleteServlet extends HttpServlet {
 
+    private WorkersDAO workersDAO = new WorkersDAO();
+    private long workerId = 0;
+
     @Override
     public void doGet (HttpServletRequest req, HttpServletResponse resp)
             throws IOException, ServletException {
-        WorkersDAO workersDAO = new WorkersDAO();
-        long workerId = Long.parseLong(req.getParameter("id"));
-        //if (workerId != null)
-        workersDAO.deleteWorker(workerId);
-        //System.out.println("Delete " + workersDAO.getWorkers());
-        //req.getRequestDispatcher("/printall.jsp").forward(req, resp);
-        resp.sendRedirect("printall");
+        workerId = Long.parseLong(req.getParameter("id"));
+        doDelete(req, resp);
     }
 
-   /* @Override
-    public void doPost (HttpServletRequest req, HttpServletResponse resp) {
-    }*/
+    @Override
+    public void doDelete (HttpServletRequest req,
+                          HttpServletResponse resp)
+            throws IOException {
+
+        workersDAO.deleteWorker(workerId);
+        resp.sendRedirect("printall");
+    }
 }

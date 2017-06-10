@@ -24,7 +24,7 @@ public class UpdateServlet extends HttpServlet {
     }
 
     @Override
-    protected void doPost (HttpServletRequest req, HttpServletResponse resp)
+    protected void doPut (HttpServletRequest req, HttpServletResponse resp)
             throws IOException, ServletException {
 
         String firstName = req.getParameter("firstName");

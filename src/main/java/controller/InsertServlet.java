@@ -33,7 +33,7 @@ public class InsertServlet extends HttpServlet{
                                            Integer.parseInt(req.getParameter("age")),
                                            Double.parseDouble(req.getParameter("salary")),
                                            // dodac sprawdzanie kolejnego id dodawanego workera
-                                           workersDAO.getSize()));
+                                           workersDAO.getSize()+1));
         resp.sendRedirect("printall");
     }
 }
