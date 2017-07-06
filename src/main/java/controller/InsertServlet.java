@@ -1,5 +1,6 @@
 package controller;
 
+import dao.WorkersDAO;
 import model.Worker;
 
 import javax.servlet.ServletException;
@@ -17,7 +18,7 @@ public class InsertServlet extends HttpServlet{
     @Override
     protected void doGet  (HttpServletRequest req, HttpServletResponse resp)
             throws IOException, ServletException {
-    // do poprawy
+
         resp.setContentType("text/html");
         req.setAttribute("insert", worker);
         req.getRequestDispatcher("/insert.jsp").forward(req, resp);
@@ -32,7 +33,6 @@ public class InsertServlet extends HttpServlet{
                                            req.getParameter("lastName"),
                                            Integer.parseInt(req.getParameter("age")),
                                            Double.parseDouble(req.getParameter("salary")),
-                                           // dodac sprawdzanie kolejnego id dodawanego workera
                                            workersDAO.getSize()+1));
         resp.sendRedirect("printall");
     }

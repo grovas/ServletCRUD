@@ -9,11 +9,6 @@ public class Worker {
 
     public Worker (){}
 
-  /*  public Worker(String firstName, String lastName) {
-        this.firstName = firstName;
-        this.lastName = lastName;
-    }
-*/
     public Worker(String firstName, String lastName, int age, double salary, long id) {
         this.lastName = lastName;
         this.firstName = firstName;

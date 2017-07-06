@@ -9,44 +9,6 @@ body {
     margin: 0 auto;
 }
 
-/*div.border {
-    font-size: 20px;
-    font-weight: bold;
-    color: grey;
-    background-color: lightgoldenrodyellow;
-    margin: 0px;
-    border     : 2px solid lightgray;
-    padding    : 6px;
-    width: 400px;
-    border-radius: 4px;
-    float : left;
-}
-
-div.formularz {
-
-    font-size: 20px;
-    font-weight: bold;
-    color: grey;
-    background-color: lightgoldenrodyellow;
-    margin: 0px;
-    border     : 2px solid lightgray;
-    padding    : 6px;
-    width: 200px;
-    border-radius: 4px;
-    float : left;
-}
-input[type=submit] {
-    width: 77%;
-    color: gray;
-    background-color: lightyellow;
-    padding: 14px 20px;
-    letter-spacing: 1px;
-    margin: 8px 0;
-    border     : 2px solid lightgray;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 40px;
-}*/
 
 .container {
     background-color: lightgoldenrodyellow;

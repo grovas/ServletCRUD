@@ -1,15 +1,14 @@
 package controller;
 
+import dao.LoginDAO;
+import dao.WorkersDAO;
 import model.Worker;
 
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.concurrent.atomic.AtomicLong;
 
 public class LoginServlet extends HttpServlet {
@@ -29,7 +28,6 @@ public class LoginServlet extends HttpServlet {
 
         String userName = req.getParameter("username");
         String password = req.getParameter("password");
-       // System.out.println("user" + userName + "pass" + password);
 
         if(LoginDAO.validate(userName, password )){
             req.getSession(true).setAttribute("userName", "root");
@@ -37,7 +35,6 @@ public class LoginServlet extends HttpServlet {
 
             WorkersDAO workersDAO = new WorkersDAO();
 
-            //workersDAO.removeAll();
             workersDAO.insertWorker(
                     new Worker("Jas", "dertop", 12, 3333.3, lastIndex.getAndIncrement()));
             workersDAO.insertWorker(
@@ -49,8 +46,6 @@ public class LoginServlet extends HttpServlet {
             workersDAO.insertWorker(
                     new Worker("Jas5", "dertop5", 33,22222.4,lastIndex.getAndIncrement()));*/
 
-            //req.setAttribute("workers",workersDAO);
-            //req.getRequestDispatcher("/welcome.jsp").forward(req, resp);
         }
         else{
             req.setAttribute("error", "Niepoprawny użytkownik, bądź hasło");

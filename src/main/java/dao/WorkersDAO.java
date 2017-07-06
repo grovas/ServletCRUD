@@ -1,6 +1,5 @@
-package controller;
+package dao;
 
-import com.sun.xml.internal.ws.api.pipe.FiberContextSwitchInterceptor;
 import model.Worker;
 
 import java.util.ArrayList;
@@ -11,7 +10,6 @@ import java.util.stream.Collectors;
 public class WorkersDAO {
 
     private static List<Worker> data = new ArrayList<>();
-    private static Worker worker;
 
     public void insertWorker (Worker worker) {
         data.add(worker);
@@ -47,8 +45,4 @@ public class WorkersDAO {
     public Worker getWorkerById (int id) {
         return findById(data, id);
     }
-
-    /*public void removeAll () {
-        data = new ArrayList<>();
-    }*/
 }

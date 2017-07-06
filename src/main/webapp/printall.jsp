@@ -1,7 +1,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ page import="model.Worker" %>
-<%@ page import="controller.WorkersDAO" %>
+<%@ page import="dao.WorkersDAO" %>
 <%@ page import="java.util.List" %>
 <%@ page import="java.util.ArrayList" %>
 
@@ -24,8 +24,6 @@
     <br />
     <br />
     <div class="container">
-        <%--&lt;%&ndash;wyswielanie do testow &ndash;%&gt;
-        ${workers.get(i).id} ${workers.size()}--%>
         <table class="table table-striped">
             <thead>
             <tr>
@@ -55,7 +53,6 @@
                     </td>
                 </tr>
             </c:forEach>
-            <%--</c:if>--%>
             </tbody>
         </table>
     </div>

@@ -1,5 +1,7 @@
 package controller;
 
+import dao.WorkersDAO;
+
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -20,8 +22,6 @@ public class PrintAllServlet extends HttpServlet {
         else {
             req.setAttribute("emptyList", "empty");
             req.getRequestDispatcher("/welcome.jsp").forward(req, resp);
-            //resp.sendRedirect("welcome");
         }
-        //System.out.println("Print2 workersDAO.getWorkers() " + workersDAO.getWorkers());
     }
 }

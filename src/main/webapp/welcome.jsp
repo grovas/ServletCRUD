@@ -1,7 +1,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ page import="model.Worker" %>
-<%@ page import="controller.WorkersDAO" %>
+<%@ page import="dao.WorkersDAO" %>
 <%@ page import="controller.WelcomeServlet" %>
 
 <html>
