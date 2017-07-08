@@ -1,3 +1,3 @@
-# ProjectJSP_O_A_L
+# ServletHR
 
-Najprostrzy CRUD
+Application with login/logout for admin, adding, delete and listing persons.
